@@ -2,8 +2,10 @@ name: randomly-delete-message
 
 services:
   bot:
-    image: localhost:5000/randomly-delete-message:latest
+    image: summerwya/randomly-delete-message:latest
     build:
       context: .
     restart: on-failure
-    env_file: .env
+    environment:
+      CHANCE: 30
+      DISCORD_BOT_TOKEN: "your token here"
